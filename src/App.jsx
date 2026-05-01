@@ -1,6 +1,7 @@
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { useState } from 'react'
+import './App.css'
 
 export default function App() {
   const [alternatives, setAlternatives] = useState([])
