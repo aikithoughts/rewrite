@@ -1,16 +1,49 @@
-# React + Vite
+# Rewrite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A local writing assistant powered by Claude. Select any text in the editor, generate three alternative versions, and click to replace your selection inline.
 
-Currently, two official plugins are available:
+Built as a personal tool for exploring AI-assisted editing workflows.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+- **Select and rewrite:** highlight any passage and generate three alternatives with one click
+- **Style guide support:** paste your own style guide to shape suggestions toward your preferred voice and tone
+- **Inline replacement:** click any alternative to swap it directly into your text
+- **More options:** regenerate a fresh set without leaving the editor
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/aikithoughts/rewrite
+cd rewrite
+npm install
+cp .env.example .env
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Add your Anthropic API key to `.env`:
+
+```
+VITE_ANTHROPIC_API_KEY=your_api_key_here
+```
+
+Then run it:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173).
+
+## Built with
+
+- React + Vite
+- TipTap (rich text editor)
+- Anthropic API (Claude)
+
+## Notes
+
+This tool runs locally and calls the Anthropic API directly from the browser using your own API key. It is not intended for public hosting.
+
+## Author
+
+Dave Shevitz — [daveshevitz.com](https://daveshevitz.com)
