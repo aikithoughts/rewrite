@@ -40,7 +40,7 @@ export default function App() {
           'anthropic-dangerous-direct-browser-access': 'true',
         },
         body: JSON.stringify({
-          model: 'claude-opus-4-6',
+          model: 'claude-sonnet-4-6',
           max_tokens: 1024,
           messages: [
             {
@@ -54,8 +54,7 @@ Text to rewrite: "${text}"`,
       })
 
       const data = await response.json()
-      const content = data.content[0].text
-      const parsed = JSON.parse(content)
+      const parsed = JSON.parse(data.content[0].text)
       setAlternatives(parsed)
     } catch (err) {
       console.error(err)
@@ -74,10 +73,6 @@ Text to rewrite: "${text}"`,
 
   return (
     <div style={styles.page}>
-      <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap"
-        rel="stylesheet"
-      />
       <header style={styles.header}>
         <h1 style={styles.title}>Rewrite</h1>
         <p style={styles.subtitle}>Select text, generate alternatives.</p>
